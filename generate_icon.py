@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Generate Mixed Slabs' mod menu icon: two slabs, one block.
 
-Stone on top of oak planks in a single block space, with the seam drawn where
-the two meet. Vanilla shows that pairing as two blocks side by side or not at
-all; here it is the one picture. Source pixels are read straight out of the
+Cobblestone on top of oak planks in a single block space. Each slab carries
+its own outline and its own lit top edge, so the picture is two things stacked
+rather than one block with a line across it. Vanilla shows that pairing as two
+blocks side by side or not at all; here it is the one picture. Source pixels are read straight out of the
 vanilla Minecraft jar and scaled nearest neighbour, never smoothed.
 
 Pure stdlib PNG reader and writer (zlib + struct) so it runs without Pillow, the
@@ -221,16 +222,28 @@ def shade(px, factor):
     return tuple(min(255, int(c * factor)) for c in px[:3]) + (px[3],)
 
 
-SEAM = 8
+HALF = 8
+OUTLINE = 0.45   # each slab's edge, dark enough to separate it from its neighbour
+LIT = 1.18       # the row under the top edge, where light lands on a slab
+
+
+def slab(texture, top):
+    """Rows [top, top + HALF) of a block texture, drawn as one slab: outlined all
+    round, lit along the top. Texture-aligned, so the pattern is the block's own."""
+    rows = [list(row) for row in texture[top:top + HALF]]
+    for y, row in enumerate(rows):
+        for x in range(len(row)):
+            if y == 0 or y == HALF - 1 or x == 0 or x == len(row) - 1:
+                row[x] = shade(row[x], OUTLINE)
+            elif y == 1:
+                row[x] = shade(row[x], LIT)
+    return rows
 
 
 def build_icon():
-    stone = vanilla("block/smooth_stone_slab_side.png")
-    planks = vanilla("block/oak_planks.png")
-    sprite = [list(row) for row in stone[:SEAM]] + [list(row) for row in planks[SEAM:]]
-    sprite[SEAM - 1] = [shade(px, 0.7) for px in sprite[SEAM - 1]]   # the stone's underside edge
-    sprite[SEAM] = [shade(px, 1.12) for px in sprite[SEAM]]           # the planks' lit top edge
-    return scale(sprite, 8)
+    upper = slab(vanilla("block/cobblestone.png"), 0)
+    lower = slab(vanilla("block/oak_planks.png"), HALF)
+    return scale(upper + lower, 8)
 
 
 if __name__ == "__main__":
