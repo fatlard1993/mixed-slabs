@@ -1,0 +1,86 @@
+{
+  "textures": {
+    "torch": "minecraft:block/torch",
+    "particle": "minecraft:block/torch"
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        8,
+        7
+      ],
+      "to": [
+        9,
+        18,
+        9
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "x",
+        "angle": -45
+      },
+      "shade_direction_override": "up",
+      "faces": {
+        "down": {
+          "uv": [
+            7,
+            13,
+            9,
+            15
+          ],
+          "texture": "#torch"
+        },
+        "up": {
+          "uv": [
+            7,
+            6,
+            9,
+            8
+          ],
+          "texture": "#torch"
+        },
+        "north": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "east": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "south": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        },
+        "west": {
+          "uv": [
+            7,
+            6,
+            9,
+            16
+          ],
+          "texture": "#torch"
+        }
+      }
+    }
+  ]
+}

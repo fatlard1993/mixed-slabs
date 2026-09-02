@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "particle": "#texture",
+    "texture": "minecraft:block/poplar_planks"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        8,
+        6
+      ],
+      "to": [
+        11,
+        9.02,
+        10
+      ],
+      "faces": {
+        "down": {
+          "uv": [
+            5,
+            6,
+            11,
+            10
+          ],
+          "texture": "#texture"
+        },
+        "up": {
+          "uv": [
+            5,
+            6,
+            11,
+            10
+          ],
+          "texture": "#texture"
+        },
+        "north": {
+          "uv": [
+            5,
+            14,
+            11,
+            15
+          ],
+          "texture": "#texture"
+        },
+        "south": {
+          "uv": [
+            5,
+            14,
+            11,
+            15
+          ],
+          "texture": "#texture"
+        },
+        "west": {
+          "uv": [
+            6,
+            14,
+            10,
+            15
+          ],
+          "texture": "#texture"
+        },
+        "east": {
+          "uv": [
+            6,
+            14,
+            10,
+            15
+          ],
+          "texture": "#texture"
+        }
+      }
+    }
+  ]
+}

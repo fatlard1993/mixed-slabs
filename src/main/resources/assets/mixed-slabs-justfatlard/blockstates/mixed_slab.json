@@ -1,0 +1,2292 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "bottom_slab": "acacia_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/acacia_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "andesite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/andesite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "bamboo_mosaic_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/bamboo_mosaic_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "bamboo_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/bamboo_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "birch_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/birch_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "black_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/black_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "black_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/black_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "blackstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blackstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "blue_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blue_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "blue_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blue_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "brown_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brown_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "brown_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brown_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cherry_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cherry_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cinnabar_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cinnabar_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cinnabar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cinnabar_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cobbled_deepslate_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cobbled_deepslate_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cobblestone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cobblestone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "crimson_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/crimson_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cut_red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_red_sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cut_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cyan_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cyan_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cyan_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cyan_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "dark_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/dark_oak_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "dark_prismarine_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/dark_prismarine_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "deepslate_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/deepslate_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "deepslate_tile_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/deepslate_tile_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "diorite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/diorite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "end_stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/end_stone_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "exposed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/exposed_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "granite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/granite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "gray_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/gray_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "gray_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/gray_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "green_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/green_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "green_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/green_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "jungle_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/jungle_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "light_blue_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_blue_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "light_blue_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_blue_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "light_gray_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_gray_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "light_gray_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_gray_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "lime_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/lime_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "lime_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/lime_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "magenta_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/magenta_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "magenta_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/magenta_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mangrove_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mangrove_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mossy_cobblestone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mossy_cobblestone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mossy_stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mossy_stone_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mud_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mud_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "nether_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/nether_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oak_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "orange_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/orange_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "orange_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/orange_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "oxidized_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oxidized_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "pale_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pale_oak_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "petrified_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/petrified_oak_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "pink_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pink_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "pink_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pink_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_andesite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_andesite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_blackstone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_blackstone_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_blackstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_blackstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_cinnabar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_cinnabar_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_deepslate_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_deepslate_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_diorite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_diorite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_granite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_granite_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_sulfur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_sulfur_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_tuff_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_tuff_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "poplar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/poplar_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "prismarine_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/prismarine_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "prismarine_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/prismarine_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "purple_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purple_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "purple_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purple_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "purpur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purpur_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "quartz_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/quartz_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_nether_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_nether_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "resin_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/resin_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "smooth_quartz_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_quartz_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "smooth_red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_red_sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "smooth_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_sandstone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "smooth_stone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_stone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "spruce_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/spruce_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/stone_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "stone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/stone_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "sulfur_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sulfur_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "sulfur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sulfur_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "tuff_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/tuff_brick_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "tuff_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/tuff_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "warped_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/warped_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "waxed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "waxed_exposed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/exposed_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "waxed_oxidized_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oxidized_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "waxed_weathered_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/weathered_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "weathered_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/weathered_cut_copper_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "white_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/white_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "white_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/white_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "yellow_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/yellow_concrete_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "yellow_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/yellow_wool_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "coarse_dirt_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/coarse_dirt_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "dirt_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/dirt_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "grass_path_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/grass_path_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "grass_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/grass_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mud_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/mud_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mycelium_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/mycelium_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "podzol_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/podzol_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "rooted_dirt_slab"
+      },
+      "apply": {
+        "model": "dirt-slab-justfatlard:block/rooted_dirt_slab"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "acacia_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/acacia_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "andesite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/andesite_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "bamboo_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/bamboo_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "birch_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/birch_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "blackstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/blackstone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cherry_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cherry_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cobbled_deepslate_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cobbled_deepslate_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "cobblestone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cobblestone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "crimson_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/crimson_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "dark_oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/dark_oak_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "deepslate_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/deepslate_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "deepslate_tile_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/deepslate_tile_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "diorite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/diorite_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "end_stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/end_stone_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "granite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/granite_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "jungle_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/jungle_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mangrove_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mangrove_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mossy_cobblestone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mossy_cobblestone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mossy_stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mossy_stone_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "mud_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mud_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "nether_brick_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/nether_brick_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "nether_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/nether_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/oak_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "pale_oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/pale_oak_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_blackstone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_blackstone_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_blackstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_blackstone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_deepslate_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_deepslate_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "polished_tuff_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_tuff_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "prismarine_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/prismarine_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_nether_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/red_nether_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "red_sandstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/red_sandstone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "sandstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/sandstone_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "spruce_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/spruce_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/stone_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "tuff_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/tuff_brick_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "tuff_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/tuff_wall_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "bottom_slab": "warped_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/warped_fence_post_slab_bottom"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "acacia_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/acacia_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "andesite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/andesite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "bamboo_mosaic_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/bamboo_mosaic_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "bamboo_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/bamboo_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "birch_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/birch_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "black_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/black_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "black_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/black_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blackstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blackstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blue_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blue_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blue_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/blue_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brown_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brown_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brown_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/brown_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cherry_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cherry_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cinnabar_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cinnabar_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cinnabar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cinnabar_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cobbled_deepslate_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cobbled_deepslate_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cobblestone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cobblestone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "crimson_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/crimson_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cut_red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_red_sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cut_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cyan_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cyan_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cyan_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cyan_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "dark_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/dark_oak_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "dark_prismarine_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/dark_prismarine_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "deepslate_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/deepslate_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "deepslate_tile_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/deepslate_tile_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "diorite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/diorite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "end_stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/end_stone_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "exposed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/exposed_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "granite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/granite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "gray_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/gray_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "gray_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/gray_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "green_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/green_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "green_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/green_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "jungle_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/jungle_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_blue_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_blue_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_blue_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_blue_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_gray_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_gray_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_gray_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/light_gray_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "lime_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/lime_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "lime_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/lime_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "magenta_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/magenta_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "magenta_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/magenta_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mangrove_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mangrove_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mossy_cobblestone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mossy_cobblestone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mossy_stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mossy_stone_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mud_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/mud_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "nether_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/nether_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oak_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "orange_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/orange_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "orange_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/orange_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "oxidized_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oxidized_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pale_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pale_oak_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "petrified_oak_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/petrified_oak_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pink_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pink_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pink_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/pink_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_andesite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_andesite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_blackstone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_blackstone_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_blackstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_blackstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_cinnabar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_cinnabar_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_deepslate_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_deepslate_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_diorite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_diorite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_granite_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_granite_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_sulfur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_sulfur_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_tuff_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/polished_tuff_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "poplar_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/poplar_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "prismarine_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/prismarine_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "prismarine_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/prismarine_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "purple_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purple_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "purple_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purple_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "purpur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/purpur_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "quartz_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/quartz_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_nether_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_nether_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/red_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "resin_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/resin_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "smooth_quartz_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_quartz_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "smooth_red_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_red_sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "smooth_sandstone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_sandstone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "smooth_stone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/smooth_stone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "spruce_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/spruce_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "stone_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/stone_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "stone_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/stone_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "sulfur_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sulfur_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "sulfur_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/sulfur_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "tuff_brick_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/tuff_brick_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "tuff_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/tuff_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "warped_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/warped_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "waxed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "waxed_exposed_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/exposed_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "waxed_oxidized_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/oxidized_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "waxed_weathered_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/weathered_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "weathered_cut_copper_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/weathered_cut_copper_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "white_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/white_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "white_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/white_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "yellow_concrete_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/yellow_concrete_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "yellow_wool_slab"
+      },
+      "apply": {
+        "model": "minecraft:block/yellow_wool_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "acacia_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/acacia_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "andesite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/andesite_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "bamboo_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/bamboo_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "birch_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/birch_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blackstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/blackstone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cherry_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cherry_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cobbled_deepslate_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cobbled_deepslate_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cobblestone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/cobblestone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "crimson_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/crimson_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "dark_oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/dark_oak_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "deepslate_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/deepslate_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "deepslate_tile_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/deepslate_tile_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "diorite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/diorite_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "end_stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/end_stone_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "granite_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/granite_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "jungle_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/jungle_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mangrove_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mangrove_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mossy_cobblestone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mossy_cobblestone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mossy_stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mossy_stone_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "mud_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/mud_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "nether_brick_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/nether_brick_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "nether_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/nether_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/oak_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pale_oak_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/pale_oak_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_blackstone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_blackstone_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_blackstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_blackstone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_deepslate_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_deepslate_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "polished_tuff_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/polished_tuff_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "prismarine_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/prismarine_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_nether_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/red_nether_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_sandstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/red_sandstone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "sandstone_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/sandstone_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "spruce_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/spruce_fence_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "stone_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/stone_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "tuff_brick_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/tuff_brick_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "tuff_wall_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/tuff_wall_post_slab_top"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "warped_fence_post_slab"
+      },
+      "apply": {
+        "model": "fence-posts:block/warped_fence_post_slab_top"
+      }
+    }
+  ]
+}
