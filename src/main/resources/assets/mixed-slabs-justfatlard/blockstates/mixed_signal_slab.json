@@ -1754,6 +1754,312 @@
     },
     {
       "when": {
+        "top_slab": "candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "white_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/white_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "white_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/white_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "orange_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/orange_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "orange_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/orange_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "magenta_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/magenta_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "magenta_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/magenta_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_blue_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/light_blue_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_blue_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/light_blue_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "yellow_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/yellow_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "yellow_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/yellow_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "lime_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/lime_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "lime_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/lime_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pink_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/pink_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "pink_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/pink_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "gray_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/gray_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "gray_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/gray_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_gray_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/light_gray_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "light_gray_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/light_gray_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cyan_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/cyan_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "cyan_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/cyan_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "purple_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/purple_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "purple_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/purple_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blue_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/blue_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "blue_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/blue_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brown_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/brown_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "brown_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/brown_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "green_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/green_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "green_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/green_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/red_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "red_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/red_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "black_candle",
+        "powered": "false"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/black_candle_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "black_candle",
+        "powered": "true"
+      },
+      "apply": {
+        "model": "mixed-slabs-justfatlard:block/black_candle_on_snapped"
+      }
+    },
+    {
+      "when": {
         "top_slab": "lever_torch",
         "powered": "false"
       },

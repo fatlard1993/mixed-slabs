@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.LeverBlock;
 import net.minecraft.world.level.block.BasePressurePlateBlock;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.RedstoneTorchBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
@@ -33,6 +34,11 @@ import net.minecraft.world.phys.AABB;
  * <p>One bit is all a mixed slab carries, which is the whole reason these four are here and a
  * repeater, a comparator, a weighted plate and redstone dust are not: their behaviour lives in
  * state there is no room for.
+ *
+ * <p>A candle rides along on the same terms. It is not redstone, but it is a thing that stands on
+ * a slab and has exactly one bit that matters - whether it is lit - and the block that carries a
+ * torch's bit carries a candle's just as well. What it gives up is the count: one candle on a slab,
+ * never four.
  */
 public final class MixedSignal {
 	private MixedSignal() {}
@@ -77,6 +83,64 @@ public final class MixedSignal {
 	public static int directSignal(BlockState mixed, BlockGetter level, BlockPos pos, Direction direction) {
 		BlockState component = componentOf(mixed);
 		return component == null ? 0 : component.getDirectSignal(level, pos, direction);
+	}
+
+	/** Whether the carried thing is a candle, which is lit and snuffed rather than switched. */
+	public static boolean isCandle(BlockState mixed) {
+		BlockState component = componentOf(mixed);
+		return component != null && component.getBlock() instanceof CandleBlock;
+	}
+
+	/**
+	 * A candle, lit by what vanilla lights candles with: flint and steel, or a fire charge.
+	 *
+	 * <p>The item pays what it would have paid to light a real candle - a use of the steel, or the
+	 * whole charge - so a slab is not a cheaper place to keep a flame.
+	 */
+	public static boolean light(BlockState mixed, Level level, BlockPos pos, Player player,
+			net.minecraft.world.item.ItemStack held, net.minecraft.world.InteractionHand hand) {
+		if (!isCandle(mixed) || mixed.getValue(MixedSlabBlock.POWERED)) return false;
+
+		boolean steel = held.getItem() instanceof net.minecraft.world.item.FlintAndSteelItem;
+		boolean charge = held.getItem() instanceof net.minecraft.world.item.FireChargeItem;
+		if (!steel && !charge) return false;
+
+		level.setBlock(pos, mixed.setValue(MixedSlabBlock.POWERED, true), Block.UPDATE_ALL);
+		level.playSound(null, pos,
+			steel ? net.minecraft.sounds.SoundEvents.FLINTANDSTEEL_USE
+				: net.minecraft.sounds.SoundEvents.FIRECHARGE_USE,
+			net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
+
+		if (player != null && !player.isCreative()) {
+			if (steel) {
+				held.hurtAndBreak(1, player, hand == net.minecraft.world.InteractionHand.MAIN_HAND
+					? net.minecraft.world.entity.EquipmentSlot.MAINHAND
+					: net.minecraft.world.entity.EquipmentSlot.OFFHAND);
+			} else {
+				held.shrink(1);
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * A lit candle, put out by an empty hand, the way vanilla's is.
+	 *
+	 * <p>A wisp of smoke where the flame was: the candle stands on the halfway line, so the flame
+	 * sits a little above the middle of the block rather than where a candle on the floor keeps it.
+	 */
+	public static boolean snuff(BlockState mixed, Level level, BlockPos pos, Player player) {
+		if (!isCandle(mixed) || !mixed.getValue(MixedSlabBlock.POWERED)) return false;
+		if (player != null && !player.getMainHandItem().isEmpty()) return false;
+
+		level.setBlock(pos, mixed.setValue(MixedSlabBlock.POWERED, false), Block.UPDATE_ALL);
+		level.playSound(null, pos, net.minecraft.sounds.SoundEvents.CANDLE_EXTINGUISH,
+			net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+		if (level instanceof ServerLevel server) {
+			server.sendParticles(net.minecraft.core.particles.ParticleTypes.SMOKE,
+				pos.getX() + 0.5, pos.getY() + 0.5 + 0.5, pos.getZ() + 0.5, 3, 0.05, 0.05, 0.05, 0.0);
+		}
+		return true;
 	}
 
 	/** Whether the carried component is one you flip or press. */

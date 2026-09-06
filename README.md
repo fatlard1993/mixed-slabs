@@ -42,6 +42,14 @@ comes from.
 A repeater's delay, a comparator's mode, a weighted plate's sixteen power levels and redstone dust's
 connection shape cannot be carried, and are not here.
 
+**Candles ride along on the same terms.** A candle placed on a slab shares its block, and its one
+bit is whether it is lit: flint and steel or a fire charge lights it, an empty hand puts it out, and
+it gives off a lit candle's light. What it gives up is the count - vanilla stacks up to four in a
+block, and there is no room here to say how many - so a candle on a slab is one candle, in any of
+the seventeen colours. It cannot be waterlogged either; the block that carries a bit has no room for
+water. And it does not flicker: the flame's dancing particle is a client-side animation tied to the
+vanilla candle block, so a lit candle on a slab glows and lights the room, and holds still.
+
 **Floor switches have no facing.** A lever powers the same whichever way it points, so facing is
 cosmetic — and paying four times the states for it costs more than the orientation is worth.
 
@@ -109,29 +117,6 @@ Everything the block does defers to whichever half is being asked about:
   does not cost you the oak for want of a pickaxe.
 - **Sound** comes from the top half, the one you are standing on.
 
-## Regenerating
-
-`generate_assets.py` writes the palette and the blockstate from the game jar in one run, so the two
-cannot drift. Run it after a Minecraft version bump:
-
-```
-python3 generate_assets.py
-```
-
-Each slab's two half-models are read out of its own blockstate rather than guessed from its name:
-the eight waxed copper slabs point at the unwaxed models, and assuming `<name>.json` /
-`<name>_top.json` would have silently produced eight invisible halves.
-
-Vanilla slabs come from the `#minecraft:slabs` tag. A sibling mod's are found **structurally** —
-any block whose blockstate offers both a `type=bottom` and a `type=top` variant is slab-shaped enough
-to be half of a mixed one. That is how fence post slabs join in: they fill a half of a block exactly
-as a slab does and say so with the very same property, but they are not in `#minecraft:slabs` and
-should not be, since that tag also means things about recipes and tools that a post is not.
-
-A mod's slabs are only mixable if this generator can see its source when it runs, so building
-mixed-slabs on its own yields a vanilla-only palette. That is the right answer: a blockstate cannot
-reference a model from a mod that is not installed without the client logging a missing model.
-
 ## Pandorical
 
 Mixed Slabs registers the mixed slab block and its half-models through Pandorical's content sync,
@@ -141,11 +126,9 @@ and tints a grass half through Pandorical's block tints.
 Without it the mod still works server-side, but a connecting client sees an untextured block. Block
 Tip, if installed, names both halves when you look at one.
 
-## Installation
+## Development
 
-Install server-side alongside its declared dependencies (see `fabric.mod.json`); connecting clients
-need only Pandorical. Version targets live in `gradle.properties` (Minecraft, loader, Fabric API) and
-`fabric.mod.json` (Java).
+Installing and the art pipeline are in [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## License
 

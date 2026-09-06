@@ -13,9 +13,10 @@ import net.minecraft.world.level.block.Block;
  * cannot answer the only question anyone asks of this block. Two of them side by side, one oak over
  * stone and one stone over oak, are told apart by looking at the floor rather than by reading.
  *
- * <p>So the tip names both halves, in the order you are looking at them. It has to be worked out
- * from the block in front of the player rather than registered once against the id, because the
- * pairing lives in the block state and not in which block it is.
+ * <p>So the card's title is both halves, in the order you are looking at them: "Oak Planks over
+ * Stone" where the name would say "Mixed Slab". It has to be worked out from the block in front
+ * of the player rather than registered once against the id, because the pairing lives in the
+ * block state and not in which block it is.
  *
  * <p>Compiled against block-tip's API and guarded at the call site by a mod-loaded check, so a
  * server without it never loads this class.
@@ -24,7 +25,7 @@ public final class SlabTips {
 	private SlabTips() {}
 
 	public static void register() {
-		BlockTipApi.describe((level, pos, state, player) -> {
+		BlockTipApi.name((level, pos, state, player) -> {
 			if (!MixedSlabsApi.isMixedSlab(state)) return null;
 
 			Block top = MixedSlabsApi.topHalf(state);

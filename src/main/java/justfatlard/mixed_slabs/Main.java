@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,7 +75,12 @@ public class Main implements ModInitializer {
 	private static int halfLight(BlockState state, String name) {
 		for (var property : state.getProperties()) {
 			if (property instanceof SlabHalfProperty half && half.getName().equals(name)) {
-				return SlabPalette.block(state.getValue(half)).defaultBlockState().getLightEmission();
+				BlockState component = SlabPalette.block(state.getValue(half)).defaultBlockState();
+				// A torch on the slab burns as the slab's own switch says, not as its default
+				if (component.hasProperty(BlockStateProperties.LIT) && state.hasProperty(MixedSlabBlock.POWERED)) {
+					component = component.setValue(BlockStateProperties.LIT, state.getValue(MixedSlabBlock.POWERED));
+				}
+				return component.getLightEmission();
 			}
 		}
 		return 0;

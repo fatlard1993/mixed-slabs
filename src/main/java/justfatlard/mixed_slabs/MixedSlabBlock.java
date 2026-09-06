@@ -277,7 +277,22 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	protected net.minecraft.world.InteractionResult useWithoutItem(BlockState state,
 			net.minecraft.world.level.Level level, BlockPos pos, Player player,
 			net.minecraft.world.phys.BlockHitResult hit) {
-		if (!signal || !MixedSignal.flip(state, level, pos, player)) {
+		if (!signal) return net.minecraft.world.InteractionResult.PASS;
+		if (MixedSignal.flip(state, level, pos, player) || MixedSignal.snuff(state, level, pos, player)) {
+			return net.minecraft.world.InteractionResult.SUCCESS;
+		}
+		return net.minecraft.world.InteractionResult.PASS;
+	}
+
+	/**
+	 * Lighting a candle: vanilla's flint and steel only lights blocks in the candle tag, and this
+	 * block is not in it, so the block has to accept the flame itself.
+	 */
+	@Override
+	protected net.minecraft.world.InteractionResult useItemOn(ItemStack held, BlockState state,
+			net.minecraft.world.level.Level level, BlockPos pos, Player player,
+			net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
+		if (!signal || !MixedSignal.light(state, level, pos, player, held, hand)) {
 			return net.minecraft.world.InteractionResult.PASS;
 		}
 		return net.minecraft.world.InteractionResult.SUCCESS;

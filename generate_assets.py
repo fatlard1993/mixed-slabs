@@ -64,12 +64,17 @@ VANILLA_TOPPERS = ["torch", "soul_torch"] + [f"{dye}_carpet" for dye in DYES]
 WOODS = ("oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry",
          "pale_oak", "bamboo", "poplar", "crimson", "warped")
 
-# Redstone components that sit on a surface and carry exactly one bit of their own.
+# Things that sit on a surface and carry exactly one bit of their own.
 #
 # One bit is the whole test. A plate, a lever, a button and a redstone torch each store a single
 # boolean and nothing else that matters, so a mixed slab can carry it; a repeater's delay, a
 # comparator's mode, a weighted plate's sixteen power levels and redstone dust's connection shape
 # cannot be carried and are not here.
+#
+# A candle is here on the same terms, with its bit being whether it is lit. What it gives up is
+# the count: vanilla stacks up to four in one block, and a mixed slab has no room to say how many,
+# so a candle on a slab is one candle. Its models are the one-candle pair, picked because they
+# come first in the blockstate.
 #
 # Their facing is not carried either, deliberately. A floor lever powers the same whichever way it
 # points, so facing is cosmetic - and paying four times the states for it would cost more than the
@@ -80,6 +85,7 @@ SIGNAL_TOPPERS = (
     + ["stone_button", "polished_blackstone_button"]
     + [f"{wood}_button" for wood in WOODS]
     + ["lever", "redstone_torch"]
+    + ["candle"] + [f"{dye}_candle" for dye in DYES]
 )
 
 # Toppers that must never be waterlogged, because water destroys them.
