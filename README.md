@@ -4,6 +4,10 @@ Two different slabs in one block space.
 
 Server-side; Pandorical carries the client's half. Players need Pandorical and nothing else.
 
+## Screenshots
+
+![Six blocks, each holding two different slabs: oak over stone, quartz over deepslate, bamboo over mud brick](mixed-slabs.png)
+
 ## How
 
 Place any slab onto any other slab's empty half. Vanilla does this already when both are the same
