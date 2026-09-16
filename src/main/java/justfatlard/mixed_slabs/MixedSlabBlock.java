@@ -343,6 +343,11 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	 */
 	@Override
 	protected float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
+		// A torch or a lever on top comes off at its own speed when it is what you are hitting: a
+		// punch, as it would anywhere else. See popTopper.
+		if (hasTopper(state) && aimsAtTop(player, pos)) {
+			return halfState(state, top).getDestroyProgress(player, level, pos);
+		}
 		return Math.min(
 			halfState(state, bottom).getDestroyProgress(player, level, pos),
 			halfState(state, top).getDestroyProgress(player, level, pos));
@@ -355,11 +360,14 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	}
 
 	/**
-	 * Both slabs back, each only if the tool could have got it on its own.
+	 * Both slabs back, each only if the tool could have got it on its own, and each as its own loot
+	 * table would give it.
 	 *
 	 * <p>Judged per half rather than for the block as a whole. Mixing a stone slab into an oak one
 	 * must not become a way of collecting stone by hand, and it must not cost you the oak for want
-	 * of a pickaxe either - so each half is asked the question vanilla would have asked it.
+	 * of a pickaxe either - so each half is asked the question vanilla would have asked it. The
+	 * loot table is the rest of that question: a grass slab gives a dirt slab back unless the tool
+	 * has silk touch, and handing over the grass slab itself made a mixed slab the way round it.
 	 */
 	@Override
 	protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
@@ -368,14 +376,53 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 			: ItemStack.EMPTY;
 
 		List<ItemStack> drops = new ArrayList<>(2);
-		addHalf(drops, halfState(state, bottom), tool);
-		addHalf(drops, halfState(state, top), tool);
+		addHalf(drops, halfState(state, bottom), tool, params);
+		addHalf(drops, halfState(state, top), tool, params);
 		return drops;
 	}
 
-	private static void addHalf(List<ItemStack> drops, BlockState half, ItemStack tool) {
+	private static void addHalf(List<ItemStack> drops, BlockState half, ItemStack tool, LootParams.Builder params) {
 		if (half.requiresCorrectToolForDrops() && !tool.isCorrectToolForDrops(half)) return;
 
-		drops.add(new ItemStack(half.getBlock()));
+		// The same parameters, with this half as the block being broken.
+		drops.addAll(half.getDrops(params));
+	}
+
+	/** Whether the top half is something standing on the slab - a torch, a lever - rather than a slab. */
+	public boolean hasTopper(BlockState state) {
+		if (!state.is(this)) return false;
+		int index = state.getValue(top);
+		return SlabPalette.topperIndices().contains(index) || SlabPalette.signalIndices().contains(index);
+	}
+
+	/** Whether the player is looking at the top half of this block. */
+	public static boolean aimsAtTop(Player player, BlockPos pos) {
+		return player.pick(player.blockInteractionRange(), 1.0F, false) instanceof net.minecraft.world.phys.BlockHitResult hit
+			&& hit.getBlockPos().equals(pos)
+			&& hit.getLocation().y - pos.getY() > 0.5;
+	}
+
+	/**
+	 * Take the torch, lever or whatever is on top off, and leave the slab it stood on.
+	 *
+	 * <p>A mixed slab breaks as one block, as hard as its harder half, which is right for two slabs
+	 * and wrong for a torch on one: knocking a torch off took as long as mining the slab, and took
+	 * the slab with it. What is on top drops as it would anywhere, by its own loot table and the
+	 * tool in hand, and the slab stands as a plain slab again.
+	 */
+	public void popTopper(net.minecraft.server.level.ServerLevel level, BlockPos pos, BlockState state, Player player) {
+		BlockState topper = halfState(state, top);
+		BlockState slab = halfState(state, bottom);
+		if (slab.hasProperty(SlabBlock.WATERLOGGED) && state.hasProperty(SlabBlock.WATERLOGGED)) {
+			slab = slab.setValue(SlabBlock.WATERLOGGED, state.getValue(SlabBlock.WATERLOGGED));
+		}
+		if (!player.isCreative()) {
+			for (ItemStack drop : Block.getDrops(topper, level, pos, null, player, player.getMainHandItem())) {
+				Block.popResource(level, pos, drop);
+			}
+		}
+		level.levelEvent(net.minecraft.world.level.block.LevelEvent.PARTICLES_DESTROY_BLOCK, pos, Block.getId(topper));
+		level.setBlock(pos, slab, Block.UPDATE_ALL);
+		level.gameEvent(player, net.minecraft.world.level.gameevent.GameEvent.BLOCK_DESTROY, pos);
 	}
 }

@@ -165,6 +165,14 @@ public class Main implements ModInitializer {
 			MOD_ID + ":" + TOPPER_NAME, MOD_ID + ":" + SIGNAL_NAME);
 
 		UseBlockCallback.EVENT.register(MixedSlabPlacement::onUseBlock);
+		// Hitting what stands on a slab knocks it off and leaves the slab.
+		net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents.BEFORE.register((level, player, pos, state, blockEntity) -> {
+			if (!(level instanceof net.minecraft.server.level.ServerLevel server)) return true;
+			if (!(state.getBlock() instanceof MixedSlabBlock mixed) || !mixed.hasTopper(state)) return true;
+			if (!MixedSlabBlock.aimsAtTop(player, pos)) return true;
+			mixed.popTopper(server, pos, state, player);
+			return false;
+		});
 
 		// One block id covers every pairing in the palette, so the card that names a block cannot
 		// say which pairing this one is. Worth a line when block-tip is there to carry it.

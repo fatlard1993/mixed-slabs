@@ -4,8 +4,9 @@ For what the mod is and how it plays, see [README.md](README.md).
 
 ## Regenerating
 
-`generate_assets.py` writes the palette and the blockstate from the game jar in one run, so the two
-cannot drift. Run it after a Minecraft version bump:
+`generate_assets.py` writes the palette, the four blockstates and the lifted models for vanilla things
+that rest on a slab from the game jar in one run, so they cannot drift. Run it after a Minecraft
+version bump:
 
 ```
 python3 generate_assets.py

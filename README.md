@@ -14,17 +14,32 @@ Which half the new slab lands in is decided exactly the way vanilla decides it �
 clicked and how high up you clicked it — so the two behave identically and the answer never depends
 on which of them handled the click. Sneaking still means "ignore the block, use what is in my hand".
 
-Break it and you get both slabs back.
+Break it and you get both slabs back, each as breaking that slab on its own would give it: a grass
+slab half comes back as a dirt slab unless the tool has Silk Touch.
 
-## Two blocks
+## Four blocks
 
-There are two: `mixed_slab` and `mixed_dirt_slab`, split by what is in the **top** half. That is not
-a stylistic division. A tag belongs to a block and not to a state, so "this surface is dirt, plants
-may be placed on it" cannot be said about *some* states of one block — splitting on the surface says
-it about all the states of one of them, and `mixed_dirt_slab` sits in `#minecraft:dirt`.
+There are four: `mixed_slab`, `mixed_dirt_slab`, `mixed_topper_slab` and `mixed_signal_slab`, split
+by what is in the **top** half. That is not a stylistic division. A tag belongs to a block and not to
+a state, so "this surface is dirt, plants may be placed on it" cannot be said about *some* states of
+one block — splitting on the surface says it about all the states of one of them, and
+`mixed_dirt_slab` sits in `#minecraft:dirt`. A thing resting on a slab is drawn where the lower half
+ends rather than where the upper half begins, which is a different model for the same top half, so
+it gets `mixed_topper_slab`; a redstone component carries an on/off bit the others have no use for,
+so it gets `mixed_signal_slab`.
 
-The two share every possible bottom half and divide the top halves between them, so together they
+The four share every possible bottom half and divide the top halves between them, so together they
 hold exactly the combinations a single block would. **The split costs no extra states at all.**
+
+## Resting on a slab
+
+Floor boards from [wood-floor](../wood-floor), torches, soul torches and carpets can be placed on a
+slab and share its block instead of spending the one above. A torch on a slab gives off a torch's
+light. Water can fill what a board or a carpet leaves empty; a torch on a slab is never waterlogged,
+because water destroys one.
+
+Hitting what stands on a slab — a torch, a lever, anything in this section or the next — knocks just
+that off, at its own speed, and leaves the slab. It drops as it would anywhere else.
 
 ## Redstone on a step
 
@@ -37,6 +52,9 @@ is a source, what it puts out and how strongly — is answered by building the r
 state and asking it, the same way hardness and sound already are. Only the *writing* is ours: when
 the bit flips. That is a few lines per component rather than a system, and it is where the fidelity
 comes from.
+
+With [lever-torch](../lever-torch) and [player-detector](../player-detector) installed, a lever torch
+and a player detector ride along the same way, and the detector still notices only players.
 
 **One bit is the whole test.** A plate, a lever, a button and a torch each store a single boolean.
 A repeater's delay, a comparator's mode, a weighted plate's sixteen power levels and redstone dust's
@@ -71,6 +89,7 @@ A mixed slab is its own block, so every "what block is this?" in the game sees a
 the two slabs inside it. `MixedSlabsApi` is how a mod finds out — a small static surface over plain
 vanilla types, reached by reflection so nothing has to depend on this mod:
 
+- `isMixedSlab(state)`
 - `halves(state)` / `topHalf(state)` / `bottomHalf(state)`
 - `withTopHalf(state, block)` — resurfacing, for grass creeping on or a shovel making a path. May
   hand back a state of the *other* block, since which one holds a combination depends on its top.
@@ -99,12 +118,17 @@ Wired up so far:
 A position holds one block state, and one block state cannot name two materials. So a mixed slab is
 a block of its own whose state says which slab is in each half:
 
-- **147 slabs**, vanilla plus the suite's own, so 21,609 states across the two blocks.
-- The blockstate is **multipart**, which is what makes that tractable. Each half's model is selected
-  by its own property independently, so the file needs one case per slab per half — 202 — rather
-  than one per combination.
-- The models are **vanilla's own**. Nothing is generated, and the geometry is not duplicated per
-  state: a multipart state holds references to already-baked sub-models.
+- **147 slabs**, vanilla plus the suite's own, and 93 things that rest on one: 42 boards, torches
+  and carpets, and 51 redstone components and candles. That is 147 × 240 = 35,280 combinations,
+  and 70,560 states across the four blocks, since each also carries one more bit (waterlogged, or
+  on/off for the redstone one).
+- The blockstates are **multipart**, which is what makes that tractable. Each half's model is
+  selected by its own property independently, so each file needs one case per thing per half
+  (two for a redstone component, on and off) — 879 across the four — rather than one per
+  combination.
+- The slab models are **vanilla's own**, or the sibling mod's. Only the vanilla things that rest on
+  a slab get a model generated here, their own model lifted onto the halfway line. The geometry is
+  not duplicated per state: a multipart state holds references to already-baked sub-models.
 
 The win is that vanilla does the drawing. Lighting, ambient occlusion, face culling and break
 particles are the real ones rather than an imitation, and there is no client-side rendering code to
