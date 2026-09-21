@@ -8,7 +8,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"fabric-client-gametest": [
-			"justfatlard.mixed_slabs.gametest.Showcase"
+			"justfatlard.mixed_slabs.gametest.Showcase",
+			"justfatlard.mixed_slabs.gametest.FloorsMix"
 		]
 	},
 	"depends": {

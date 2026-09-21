@@ -1,0 +1,11 @@
+{
+  "overview": [
+    "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
+  ],
+  "versions": {
+    "1.0.0": [
+      "Any slab goes on top of any other and both stay, each keeping its own name, tint and waterlogging.",
+      "Hitting something standing on a slab knocks just that off at its own speed, leaving the slab where it was, and each half drops through its own loot table."
+    ]
+  }
+}
