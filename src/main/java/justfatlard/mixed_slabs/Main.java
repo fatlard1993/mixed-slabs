@@ -89,19 +89,33 @@ public class Main implements ModInitializer {
 	/** Shared by the real block and the client's stand-in, so the two cannot drift apart. */
 	private static final float HARDNESS = 2.0F;
 
-	private static BlockBehaviour.Properties properties(String name) {
+	/**
+	 * What the terrain block tells the client instead, because 2.0F is four times dirt.
+	 *
+	 * <p>The server works a mixed block's hardness out per state from its two halves, but digging
+	 * is predicted on the client, and the client's stand-in has one number for every state it can
+	 * hold. One number for stone-and-oak is near enough; one number for a block that is only ever
+	 * ground is not - the whole terrain family runs 0.5F to 0.65F, so a flat 2.0F made two dirt
+	 * slabs slower to dig than the dirt they were cut from.
+	 *
+	 * <p>The hardest of them rather than the softest: the server takes the harder half, so a client
+	 * guessing low would finish early and be told no. Guessing high is at worst a little slow.
+	 */
+	private static final float TERRAIN_HARDNESS = 0.65F;
+
+	private static BlockBehaviour.Properties properties(String name, float hardness) {
 		return BlockBehaviour.Properties.of()
-			.strength(HARDNESS, 6.0F)
+			.strength(hardness, 6.0F)
 			.sound(SoundType.STONE)
 			.lightLevel(Main::lightOf)
 			.setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name)));
 	}
 
 	public static final MixedSlabBlock MIXED_SLAB =
-		MixedSlabBlock.create(properties(ORDINARY_NAME), SlabPalette.ordinaryIndices(), false, true, false);
+		MixedSlabBlock.create(properties(ORDINARY_NAME, HARDNESS), SlabPalette.ordinaryIndices(), false, true, false);
 
 	public static final MixedSlabBlock MIXED_DIRT_SLAB =
-		MixedSlabBlock.create(properties(DIRT_NAME), SlabPalette.terrainIndices(), false, true, false);
+		MixedSlabBlock.create(properties(DIRT_NAME, TERRAIN_HARDNESS), SlabPalette.terrainIndices(), false, true, false);
 
 	/**
 	 * Something resting on a slab rather than filling the half above it: a floor board, a torch,
@@ -113,7 +127,7 @@ public class Main implements ModInitializer {
 	 * and leaves the rest of the block to hold water.
 	 */
 	public static final MixedSlabBlock MIXED_TOPPER_SLAB =
-		MixedSlabBlock.create(properties(TOPPER_NAME), SlabPalette.topperIndices(), true, true, false);
+		MixedSlabBlock.create(properties(TOPPER_NAME, HARDNESS), SlabPalette.topperIndices(), true, true, false);
 
 	/**
 	 * A redstone component riding on a slab.
@@ -124,7 +138,7 @@ public class Main implements ModInitializer {
 	 * {@link MixedSignal}.
 	 */
 	public static final MixedSlabBlock MIXED_SIGNAL_SLAB =
-		MixedSlabBlock.create(properties(SIGNAL_NAME), SlabPalette.signalIndices(), true, false, true);
+		MixedSlabBlock.create(properties(SIGNAL_NAME, HARDNESS), SlabPalette.signalIndices(), true, false, true);
 
 	/**
 	 * The state for a pair of palette indices, from whichever of the three blocks holds it.
@@ -150,10 +164,10 @@ public class Main implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		register(ORDINARY_NAME, MIXED_SLAB);
-		register(DIRT_NAME, MIXED_DIRT_SLAB);
-		register(TOPPER_NAME, MIXED_TOPPER_SLAB);
-		register(SIGNAL_NAME, MIXED_SIGNAL_SLAB);
+		register(ORDINARY_NAME, HARDNESS, MIXED_SLAB);
+		register(DIRT_NAME, TERRAIN_HARDNESS, MIXED_DIRT_SLAB);
+		register(TOPPER_NAME, HARDNESS, MIXED_TOPPER_SLAB);
+		register(SIGNAL_NAME, HARDNESS, MIXED_SIGNAL_SLAB);
 
 		PandoricalApi.content().registerModAssets(MOD_ID);
 
@@ -192,7 +206,7 @@ public class Main implements ModInitializer {
 			SlabPalette.signalIndices().size(), bottoms * tops, bottoms * tops * 2);
 	}
 
-	private static void register(String name, MixedSlabBlock block) {
+	private static void register(String name, float hardness, MixedSlabBlock block) {
 		Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, name), block);
 
 		// Stone as the stand-in: the client half needs a full solid cube with the same two state
@@ -206,7 +220,7 @@ public class Main implements ModInitializer {
 		PandoricalApi.content().registerBlock(MOD_ID + ":" + name,
 			new BlockRegistration()
 				.baseBlock("minecraft:stone")
-				.strength(HARDNESS)
+				.strength(hardness)
 				.requiresCorrectTool(false)
 				.property("bottom_slab")
 				.property("top_slab"));
