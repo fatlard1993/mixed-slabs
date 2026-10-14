@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.2": [
+      "Release notes rewritten to read plainly; nothing in play changes."
+    ],
     "1.0.1": [
       "Two dirt slabs sharing a block dig as fast as dirt, not four times slower."
     ],
