@@ -71,7 +71,7 @@ public final class MixedSlabPlacement {
 
 		// Water the pair leaves room for comes back around it - around a fence post, above a board.
 		// Asked of the state rather than of the block, because whether there is room at all depends
-		// on the two halves and not on which of the three blocks happens to hold them.
+		// on the two halves and not on which of the four blocks happens to hold them.
 		// Not for a torch: water destroys one, so a waterlogged torch is a state that should never
 		// exist rather than one nobody happens to make.
 		boolean drowns = SlabPalette.drowns(SlabPalette.indexOf(top));

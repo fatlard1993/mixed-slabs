@@ -23,14 +23,15 @@ import org.slf4j.LoggerFactory;
  * slab, you make one by placing a slab onto another, and breaking it gives back the two slabs it
  * was made of.
  *
- * <p>Three blocks, split by what is in the top half. A tag belongs to a block rather than a state,
+ * <p>Four blocks, split by what is in the top half. A tag belongs to a block rather than a state,
  * so a mixed slab with dirt on top has to <em>be</em> a different block for the game to accept a
  * flower on it. They divide the top halves between them and share every bottom half.
  *
- * <p>All three carry {@code waterlogged}, because a fence post can be either half and a post leaves
- * most of its half empty. Which combinations actually take water is decided per state when one is
- * placed, not by which block it is: the property has to exist on all of them for any of them to be
- * able to hold water, and the ones that fill their block simply never get it set.
+ * <p>Three of the four carry {@code waterlogged}, because a fence post can be either half and a post
+ * leaves most of its half empty; the fourth, the redstone one, carries {@code powered} instead.
+ * Which combinations actually take water is decided per state when one is placed, not by which
+ * block it is: the property has to exist on each of those three for any of them to be able to hold
+ * water, and the ones that fill their block simply never get it set.
  */
 public class Main implements ModInitializer {
 
@@ -141,7 +142,7 @@ public class Main implements ModInitializer {
 		MixedSlabBlock.create(properties(SIGNAL_NAME, HARDNESS), SlabPalette.signalIndices(), true, false, true);
 
 	/**
-	 * The state for a pair of palette indices, from whichever of the three blocks holds it.
+	 * The state for a pair of palette indices, from whichever of the four blocks holds it.
 	 *
 	 * <p>The single place that knows the split, so nothing else has to remember which block a
 	 * combination lives in - including a caller moving a surface from one to the other.

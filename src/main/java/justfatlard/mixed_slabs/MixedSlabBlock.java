@@ -30,13 +30,13 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
  * that were going to be drawn anyway. Vanilla does the drawing, so the lighting, ambient occlusion,
  * face culling and break particles are the real ones rather than an imitation.
  *
- * <p>There are three instances of this class, split by what is in the <em>top</em> half: dirt, a
- * thin floor board, or anything else. That is not a stylistic division. A tag belongs to a block and
- * not to a state, so "this surface is dirt and plants may be placed on it" cannot be said about some
- * states of one block; and neither can a property, so only the topper variant carries
- * {@code waterlogged}, the others having no room left in the block to hold any. Splitting on the
- * surface says each of those things about all the states of one block. They share every possible
- * bottom half and divide the top halves between them.
+ * <p>There are four instances of this class, split by what is in the <em>top</em> half: dirt, a
+ * thin floor board, a redstone component, or anything else. That is not a stylistic division. A tag
+ * belongs to a block and not to a state, so "this surface is dirt and plants may be placed on it"
+ * cannot be said about some states of one block; and neither can a property, so only the redstone
+ * variant carries {@code powered}, and it alone goes without {@code waterlogged}, since nothing it
+ * holds survives being submerged. Splitting on the surface says each of those things about all the
+ * states of one block. They share every possible bottom half and divide the top halves between them.
  *
  * <p>Everything the block does defers to whichever half is being asked about. The governing idea is
  * that <b>a mixed slab is a full-height block whose surface material is its top half</b>: questions
