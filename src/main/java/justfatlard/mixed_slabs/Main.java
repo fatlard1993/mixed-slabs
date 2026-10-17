@@ -1,8 +1,11 @@
 package justfatlard.mixed_slabs;
 
+import java.util.List;
+import justfatlard.mixed_slabs.mixin.BlockStateLight;
 import justfatlard.pandorical.api.BlockRegistration;
 import justfatlard.pandorical.api.PandoricalApi;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -63,6 +66,25 @@ public class Main implements ModInitializer {
 	 */
 	private static int lightOf(BlockState state) {
 		return Math.max(halfLight(state, "bottom_slab"), halfLight(state, "top_slab"));
+	}
+
+	/**
+	 * Works every state out again, now that every mod has registered its blocks.
+	 *
+	 * <p>A state takes its light as it is built, and its shapes and light blocking as it is
+	 * registered - both while this mod is starting. Mods start in no promised order, so another
+	 * mod's slab or lever torch may not exist yet: the half it fills would be air for good, with
+	 * nothing to stand on and a hole for light. By the time the server starts, every one does.
+	 */
+	private static void settle() {
+		SlabPalette.settle();
+		MixedSlabBlock.forgetShapes();
+		for (MixedSlabBlock block : List.of(MIXED_SLAB, MIXED_DIRT_SLAB, MIXED_TOPPER_SLAB, MIXED_SIGNAL_SLAB)) {
+			for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+				((BlockStateLight) state).mixedSlabs$setLightEmission(lightOf(state));
+				state.initCache();
+			}
+		}
 	}
 
 	/**
@@ -178,6 +200,8 @@ public class Main implements ModInitializer {
 		// unconditionally: with no grass half there is nothing tinted to colour.
 		PandoricalApi.blockTints().grass(MOD_ID + ":" + ORDINARY_NAME, MOD_ID + ":" + DIRT_NAME,
 			MOD_ID + ":" + TOPPER_NAME, MOD_ID + ":" + SIGNAL_NAME);
+
+		ServerLifecycleEvents.SERVER_STARTING.register(server -> settle());
 
 		UseBlockCallback.EVENT.register(MixedSlabPlacement::onUseBlock);
 		// Hitting what stands on a slab knocks it off and leaves the slab.

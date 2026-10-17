@@ -12,6 +12,7 @@ import java.util.Map;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 /**
  * The slabs that can be mixed, in a fixed order.
@@ -31,8 +32,7 @@ public final class SlabPalette {
 	private static final String RESOURCE = "/mixed_slabs/slab_palette.json";
 
 	private static final List<String> NAMES;
-	private static final List<Block> BLOCKS;
-	private static final Map<Block, Integer> INDEX;
+	private static final List<Identifier> IDS;
 
 	/** Palette indices by what the slab is: dirt surface, thin floor board, or neither. */
 	private static final List<Integer> TERRAIN;
@@ -88,21 +88,16 @@ public final class SlabPalette {
 			throw new IllegalStateException("Could not read the slab palette", e);
 		}
 
-		List<Block> blocks = new ArrayList<>(names.size());
+		List<Identifier> ids = new ArrayList<>(names.size());
 		List<String> paths = new ArrayList<>(names.size());
-		Map<Block, Integer> index = new HashMap<>();
-
-		for (int i = 0; i < names.size(); i++) {
-			Identifier id = Identifier.parse(names.get(i));
-			Block block = BuiltInRegistries.BLOCK.getValue(id);
-			blocks.add(block);
+		for (String name : names) {
+			Identifier id = Identifier.parse(name);
+			ids.add(id);
 			paths.add(id.getPath());
-			index.put(block, i);
 		}
 
 		NAMES = List.copyOf(paths);
-		BLOCKS = List.copyOf(blocks);
-		INDEX = Map.copyOf(index);
+		IDS = List.copyOf(ids);
 
 		List<Integer> terrain = new ArrayList<>();
 		List<Integer> ordinary = new ArrayList<>();
@@ -171,10 +166,43 @@ public final class SlabPalette {
 
 	public static int size() { return NAMES.size(); }
 
-	public static Block block(int index) { return BLOCKS.get(index); }
+	/**
+	 * The palette's blocks once every mod has registered; null until then. The palette names other
+	 * mods' slabs, and mods start in no promised order, so a lookup made while they are still
+	 * registering can find air where a slab is about to be - and must not be kept.
+	 */
+	private static volatile List<Block> settledBlocks;
+	private static volatile Map<Block, Integer> settledIndex;
+
+	/** Looks every block up for good. Called once all mods have registered: see {@link Main}. */
+	static void settle() {
+		List<Block> blocks = new ArrayList<>(IDS.size());
+		Map<Block, Integer> index = new HashMap<>();
+		for (int i = 0; i < IDS.size(); i++) {
+			Block block = BuiltInRegistries.BLOCK.getValue(IDS.get(i));
+			blocks.add(block);
+			// A slab whose mod isn't installed: air, which is never a slab to mix.
+			if (block != Blocks.AIR) index.put(block, i);
+		}
+		settledBlocks = List.copyOf(blocks);
+		settledIndex = Map.copyOf(index);
+	}
+
+	public static Block block(int index) {
+		List<Block> blocks = settledBlocks;
+		return blocks != null ? blocks.get(index) : BuiltInRegistries.BLOCK.getValue(IDS.get(index));
+	}
 
 	/** The palette index for a block, or -1 if it is not a slab we mix. */
-	public static int indexOf(Block block) { return INDEX.getOrDefault(block, -1); }
+	public static int indexOf(Block block) {
+		Map<Block, Integer> index = settledIndex;
+		if (index != null) return index.getOrDefault(block, -1);
+		if (block == Blocks.AIR) return -1;
+		for (int i = 0; i < IDS.size(); i++) {
+			if (block(i) == block) return i;
+		}
+		return -1;
+	}
 
-	public static boolean contains(Block block) { return INDEX.containsKey(block); }
+	public static boolean contains(Block block) { return indexOf(block) >= 0; }
 }

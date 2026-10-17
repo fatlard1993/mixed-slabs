@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "justfatlard.mixed_slabs.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"BlockStateLight"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

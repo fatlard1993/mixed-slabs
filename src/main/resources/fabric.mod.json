@@ -18,6 +18,9 @@
       "justfatlard.mixed_slabs.Main"
     ]
   },
+  "mixins": [
+    "mixed-slabs-justfatlard.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=${loaderVersion}",
     "fabric-api": "${fabricApiVersion}",

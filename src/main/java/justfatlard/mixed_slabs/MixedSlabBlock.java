@@ -1,6 +1,7 @@
 package justfatlard.mixed_slabs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -168,6 +169,13 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	 * combinations nobody will ever place.
 	 */
 	private static final Map<Integer, VoxelShape> UNIONS = new ConcurrentHashMap<>();
+
+	/** Drops every shape worked out so far, which may hold air for a slab not yet registered then. */
+	static void forgetShapes() {
+		Arrays.fill(LOWER, null);
+		Arrays.fill(UPPER, null);
+		UNIONS.clear();
+	}
 
 	private static VoxelShape halfShape(int index, SlabType half) {
 		VoxelShape[] cache = half == SlabType.BOTTOM ? LOWER : UPPER;
