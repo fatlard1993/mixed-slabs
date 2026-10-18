@@ -108,5 +108,23 @@ fabricApi {
 	}
 }
 
+dependencies {
+	// In the tests only, so a wood floor is there to pair with a slab: without it the floor is
+	// air, which the palette rightly refuses.
+	def woodFloorProperties = file("../wood-floor/gradle.properties")
+	if (woodFloorProperties.exists()) {
+		def woodFloorVersion = new Properties().with {
+			woodFloorProperties.withInputStream { load(it) }
+			getProperty("mod_version")
+		}
+		def woodFloorJar = file("../wood-floor/build/libs/wood-floor-justfatlard-${woodFloorVersion}.jar")
+		if (!woodFloorJar.exists()) {
+			throw new GradleException("wood-floor ${woodFloorVersion} is not built. Run `mc-build wood-floor`" +
+				" (or ./gradlew build in ../wood-floor) first - the tests pair its floors with slabs.")
+		}
+		gametestRuntimeOnly files(woodFloorJar)
+	}
+}
+
 // Pandorical's test kit, Pictures included.
 apply from: file("../pandorical/testsupport.gradle")
