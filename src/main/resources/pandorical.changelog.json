@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.3": [
+      "A mixed slab holding another mod's slab or a lever torch is whole every time the server starts. Before, that half could load as air: nothing to stand on, a hole that let light through, and a torch that gave none."
+    ],
     "1.0.2": [
       "Release notes rewritten to read plainly; nothing in play changes."
     ],
