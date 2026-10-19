@@ -1338,6 +1338,22 @@
     },
     {
       "when": {
+        "top_slab": "poplar_floor"
+      },
+      "apply": {
+        "model": "wood-floor-justfatlard:block/poplar_floor_snapped"
+      }
+    },
+    {
+      "when": {
+        "top_slab": "poplar_log_top_floor"
+      },
+      "apply": {
+        "model": "wood-floor-justfatlard:block/poplar_log_top_floor_snapped"
+      }
+    },
+    {
+      "when": {
         "top_slab": "spruce_floor"
       },
       "apply": {
