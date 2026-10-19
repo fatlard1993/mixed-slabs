@@ -413,6 +413,11 @@ def main():
     print(f"  + {len(signals)} redstone toppers, lifted in both states")
 
     palette = slabs + toppers + signals
+    # A blockstate value and a model file are named by the path alone.
+    paths = [b.split(":", 1)[1] for b in palette]
+    shared = sorted({p for p in paths if paths.count(p) > 1})
+    if shared:
+        sys.exit(f"slabs from two namespaces share a path: {shared}")
     topper_set = set(toppers) | set(signals)
     terrain = [b for b in slabs if b in dirt]
     ordinary = [b for b in slabs if b not in dirt]

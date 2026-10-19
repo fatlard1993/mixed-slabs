@@ -23,8 +23,8 @@ import net.minecraft.world.level.block.Blocks;
  * the two cannot drift.
  *
  * <p>A slab is addressed by its path - {@code oak_slab} - because that is what a blockstate property
- * value can spell. The list is generated from the vanilla tag, so every entry is in the minecraft
- * namespace and no two paths collide.
+ * value can spell. Entries come from several namespaces, so two that share a path stop the game
+ * here rather than draw as each other.
  */
 public final class SlabPalette {
 	private SlabPalette() {}
@@ -93,6 +93,7 @@ public final class SlabPalette {
 		for (String name : names) {
 			Identifier id = Identifier.parse(name);
 			ids.add(id);
+			if (paths.contains(id.getPath())) throw new IllegalStateException("Two slabs in the palette are both " + id.getPath());
 			paths.add(id.getPath());
 		}
 
