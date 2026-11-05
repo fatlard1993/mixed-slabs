@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.EmptyBlockGetter;
 import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -170,11 +171,20 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	 */
 	private static final Map<Integer, VoxelShape> UNIONS = new ConcurrentHashMap<>();
 
+	/**
+	 * One shape per geometry, however many pairs make it. Minecraft keeps what it works out about a
+	 * shape (which faces are full, what it occludes) by the shape object, so tens of thousands of
+	 * pairs with a few dozen geometries would otherwise each be worked out afresh.
+	 */
+	private static final Map<List<AABB>, VoxelShape> GEOMETRIES = new ConcurrentHashMap<>();
+	private static final List<AABB> FULL_CUBE = Shapes.block().toAabbs();
+
 	/** Drops every shape worked out so far, which may hold air for a slab not yet registered then. */
 	static void forgetShapes() {
 		Arrays.fill(LOWER, null);
 		Arrays.fill(UPPER, null);
 		UNIONS.clear();
+		GEOMETRIES.clear();
 	}
 
 	private static VoxelShape halfShape(int index, SlabType half) {
@@ -201,7 +211,13 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 		// on whether the upper half rests on the lower or sits at the ceiling.
 		int key = (lower << 16) | upper | (snapTop ? 1 << 30 : 0);
 		return UNIONS.computeIfAbsent(key,
-			k -> Shapes.or(halfShape(lower, SlabType.BOTTOM), upperShape(upper)));
+			k -> shared(Shapes.or(halfShape(lower, SlabType.BOTTOM), upperShape(upper))));
+	}
+
+	private static VoxelShape shared(VoxelShape union) {
+		List<AABB> boxes = union.toAabbs();
+		if (boxes.equals(FULL_CUBE)) return Shapes.block();
+		return GEOMETRIES.computeIfAbsent(boxes, unused -> union);
 	}
 
 	/**
