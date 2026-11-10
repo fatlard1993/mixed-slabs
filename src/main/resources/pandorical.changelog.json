@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.6": [
+      "Drop changelog notes for changes nothing in the game shows."
+    ],
     "1.0.5": [
       "Mixed slabs share one shape per look, so a server with them starts sooner."
     ],
