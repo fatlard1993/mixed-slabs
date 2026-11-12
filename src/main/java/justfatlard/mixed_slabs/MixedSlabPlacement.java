@@ -77,7 +77,7 @@ public final class MixedSlabPlacement {
 		boolean drowns = SlabPalette.drowns(SlabPalette.indexOf(top));
 
 		if (!drowns && mixed.getBlock() instanceof MixedSlabBlock block
-				&& block.leavesRoomForWater(mixed)) {
+				&& block.isWaterloggable() && block.leavesRoomForWater(mixed)) {
 			boolean inWater = level.getFluidState(pos).getType() == net.minecraft.world.level.material.Fluids.WATER
 				|| existing.getFluidState().getType() == net.minecraft.world.level.material.Fluids.WATER;
 			mixed = mixed.setValue(MixedSlabBlock.WATERLOGGED, inWater);

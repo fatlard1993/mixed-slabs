@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.7": [
+      "A pressure plate, button, lever or candle put onto a slab now settles onto it instead of doing nothing."
+    ],
     "1.0.6": [
       "Drop changelog notes for changes nothing in the game shows."
     ],
