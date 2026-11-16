@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.9": [
+      "A mixed slab finds its shape by a straight lookup instead of a boxed map key every time something asks."
+    ],
     "1.0.8": [
       "A demo to play in PvP Dimensions' onboarding."
     ],
