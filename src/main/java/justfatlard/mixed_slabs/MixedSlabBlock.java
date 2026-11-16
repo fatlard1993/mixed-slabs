@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -169,7 +170,8 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	 * world uses a handful of them, so building the table up front would be work done for
 	 * combinations nobody will ever place.
 	 */
-	private static final Map<Integer, VoxelShape> UNIONS = new ConcurrentHashMap<>();
+	private static final AtomicReferenceArray<VoxelShape> UNIONS =
+		new AtomicReferenceArray<>(2 * SlabPalette.size() * SlabPalette.size());
 
 	/**
 	 * One shape per geometry, however many pairs make it. Minecraft keeps what it works out about a
@@ -183,7 +185,7 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 	static void forgetShapes() {
 		Arrays.fill(LOWER, null);
 		Arrays.fill(UPPER, null);
-		UNIONS.clear();
+		for (int i = 0; i < UNIONS.length(); i++) UNIONS.set(i, null);
 		GEOMETRIES.clear();
 	}
 
@@ -209,9 +211,14 @@ public class MixedSlabBlock extends Block implements net.minecraft.world.level.b
 
 		// Snapped tops get their own cache line: the same pair means a different shape depending
 		// on whether the upper half rests on the lower or sits at the ceiling.
-		int key = (lower << 16) | upper | (snapTop ? 1 << 30 : 0);
-		return UNIONS.computeIfAbsent(key,
-			k -> shared(Shapes.or(halfShape(lower, SlabType.BOTTOM), upperShape(upper))));
+		int size = SlabPalette.size();
+		int key = ((snapTop ? size : 0) + lower) * size + upper;
+		VoxelShape cached = UNIONS.get(key);
+		if (cached != null) return cached;
+
+		VoxelShape union = shared(Shapes.or(halfShape(lower, SlabType.BOTTOM), upperShape(upper)));
+		UNIONS.set(key, union);
+		return union;
 	}
 
 	private static VoxelShape shared(VoxelShape union) {
