@@ -3,7 +3,7 @@
   "id": "mixed-slabs-justfatlard",
   "version": "${version}",
   "name": "Mixed Slabs",
-  "description": "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other.",
+  "description": "Two different slabs in one block space",
   "authors": [
     "justfatlard"
   ],
