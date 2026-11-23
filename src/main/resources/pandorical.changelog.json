@@ -3,6 +3,9 @@
     "Two different slabs in one block space. Place any slab onto any other and they share the block instead of refusing each other."
   ],
   "versions": {
+    "1.0.10": [
+      "Describes itself in one short line of what it adds."
+    ],
     "1.0.9": [
       "A mixed slab finds its shape by a straight lookup instead of a boxed map key every time something asks."
     ],
